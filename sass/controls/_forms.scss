@@ -1,0 +1,156 @@
+/*
+Forms
+
+
+Styleguide 4
+*/
+
+/*
+Inputs
+
+markup:
+<div style="margin-bottom: 8px;"><input type="text" value="My Cool Name" /></div>
+<div style="margin-bottom: 8px;"><input type="text" placeholder="Your Name" /></div>
+<div style="margin-bottom: 8px;"><input type="email" value="email@email.com" /></div>
+<div style="margin-bottom: 8px;"><input type="number" /></div>
+<div style="margin-bottom: 8px;"><input type="date" /></div>
+<div style="margin-bottom: 8px;"><input type="phone" /></div>
+
+Styleguide 4.1
+*/
+%input {
+  @extend %clair-text;
+
+  border: 0;
+  border-bottom: 1px solid $clair-gray;
+  display: inline-block;
+  font-size: 1rem;
+  margin-bottom: 0;
+  min-width: 250px;
+  padding: $gutter $gutter $gutter 0;
+  transition: all $fast ease-in;
+  transition-property: border-bottom-width, border-bottom-color, margin-bottom;
+
+  &:active,
+  &:focus {
+    border-bottom-color: $clair-primary;
+    border-bottom-width: 2px;
+    margin-bottom: -1px;
+    outline: 0;
+  }
+
+  &::placeholder,
+  &::-webkit-datetime-edit-month-field,
+  &::-webkit-datetime-edit-day-field,
+  &::-webkit-datetime-edit-year-field {
+    color: $clair-gray;
+  }
+
+  &[type=date] {
+    // TODO eventually style the date
+
+    &::-webkit-inner-spin-button {
+      height: rem(12px);
+    }
+
+    &::-webkit-calendar-picker-indicator {
+      height: rem(12px);
+    }
+  }
+
+  &[disabled] {
+    background-color: $clair-dust;
+    padding-left: 8px;
+  }
+}
+
+/*
+Labelled Inputs
+
+Use a `.form-group` class to wrap your input and label combo.
+
+markup:
+<div class="form-group">
+  <input type="text" value="My Cool Name" placeholder="Room Name" />
+  <label>Room Name</label>
+</div>
+<div class="form-group">
+  <input type="text" value="" placeholder="Room Name" />
+  <label>Room Name</label>
+</div>
+<div class="form-group">
+  <input type="text" value="" />
+  <label>Room Name</label>
+</div>
+
+
+Styleguide 4.2
+*/
+%form-group {
+  padding-top: $gutter-2x;
+  position: relative;
+
+  &+& {
+    margin-top: $gutter-4x;
+  }
+}
+
+%label {
+  @extend %clair-text;
+
+  color: $clair-coal;
+  cursor: text;
+  display: block;
+  font-size: rem(14px);
+  left: 0;
+  position: absolute;
+  top: 0;
+  transition: $fast ease-out;
+}
+
+/*
+Controlled Labelled Inputs
+
+If you want to use the functionality of labelled inputs with the
+label animating as if it was the placeholder text, you need to use
+the `.form-group--controlled` functionality along with some Javascript
+to mark an input with a `data-not-empty` when it has text.
+
+Note the example won't work perfectly since there is no Javascript running
+to mark the inputs as `data-not-empty` or not:
+
+markup:
+<div class="form-group form-group--controlled">
+<input type="text" value="My Cool Name" placeholder="Room Name" data-not-empty />
+  <label>Room Name</label>
+</div>
+<div class="form-group form-group--controlled">
+  <input type="text" value="" placeholder="Room Name" />
+  <label>Room Name</label>
+</div>
+<div class="form-group form-group--controlled">
+  <input type="text" value="" />
+  <label>Room Name</label>
+</div>
+
+
+Styleguide 4.3
+*/
+
+%form-group--controlled {
+  label {
+    font-size: 1rem;
+    pointer-events: none;
+    text-align: initial;
+    top: rem(24px);
+  }
+
+  input:placeholder-shown,
+  input[data-not-empty],
+  input:focus {
+    &~label {
+      font-size: rem(14px);
+      top: 0;
+    }
+  }
+}

@@ -1,0 +1,80 @@
+input {
+  @extend %clair-text;
+
+  border: 0;
+  border-bottom: 1px solid $clair-gray;
+  display: inline-block;
+  font-size: 1rem;
+  margin-bottom: 0;
+  min-width: 250px;
+  padding: $gutter $gutter $gutter 0;
+  transition: all $fast ease-in;
+  transition-property: border-bottom-width, border-bottom-color, margin-bottom;
+
+  &:active,
+  &:focus {
+    border-bottom-color: $clair-primary;
+    border-bottom-width: 2px;
+    margin-bottom: -1px;
+    outline: 0;
+  }
+
+  &::placeholder,
+  &::-webkit-datetime-edit-month-field,
+  &::-webkit-datetime-edit-day-field,
+  &::-webkit-datetime-edit-year-field {
+    color: $clair-gray;
+  }
+
+  &[type=date] {
+    // TODO eventually style the date
+
+    &::-webkit-inner-spin-button {
+      height: rem(12px);
+    }
+
+    &::-webkit-calendar-picker-indicator {
+      height: rem(12px);
+    }
+  }
+}
+
+.form-group {
+  padding-top: $gutter-2x;
+  position: relative;
+
+  &+& {
+    margin-top: $gutter-4x;
+  }
+}
+
+label {
+  @extend %clair-text;
+
+  color: $clair-coal;
+  cursor: text;
+  display: block;
+  font-size: rem(14px);
+  left: 0;
+  position: absolute;
+  top: 0;
+  transition: $fast ease-out;
+}
+
+.form-group--controlled {
+  label {
+    font-size: 1rem;
+    pointer-events: none;
+    text-align: initial;
+    top: rem(24px);
+  }
+
+  input:placeholder-shown,
+  input[data-not-empty],
+  input:focus {
+    &~label {
+      font-size: rem(14px);
+      top: 0;
+    }
+  }
+}

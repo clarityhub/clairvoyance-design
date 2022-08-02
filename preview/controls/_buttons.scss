@@ -1,0 +1,95 @@
+button,
+.button {
+  @extend %clair-text;
+
+  background-color: $clair-light;
+  border: 1px solid $clair-light;
+  border-radius: 8px;
+  color: $clair-primary;
+  cursor: pointer;
+  display: inline-block;
+  font-size: rem(14px);
+  min-width: 150px;
+  padding: $gutter;
+  text-align: center;
+  text-decoration: none;
+  transition: opacity $fast ease-in;
+
+  &:hover,
+  &:active {
+    opacity: 0.9;
+  }
+}
+
+.button--primary {
+  background-color: $clair-primary;
+  border: 1px solid $clair-primary;
+  color: $clair-light;
+
+  &:hover,
+  &:active {
+    opacity: 0.8;
+  }
+}
+
+.button--success {
+  background-color: $clair-success;
+  border: 1px solid $clair-success;
+  color: $clair-light;
+  transition: all $fast ease-in;
+  transition-property: background-color, border;
+
+  &:hover,
+  &:active {
+    background-color: darken($clair-success, 10%);
+    border: 1px solid darken($clair-success, 10%);
+  }
+}
+
+.button--danger {
+  background-color: $clair-danger;
+  border: 1px solid $clair-danger;
+  color: $clair-light;
+  transition: all $fast ease-in;
+  transition-property: background-color, border;
+
+  &:hover,
+  &:active {
+    background-color: darken($clair-danger, 10%);
+    border: 1px solid darken($clair-danger, 10%);
+  }
+}
+
+.button--outline {
+  background-color: transparent;
+  border: 1px solid $clair-light;
+  color: $clair-light;
+
+  &:hover,
+  &:active {
+    opacity: 0.8;
+  }
+}
+
+.button--primary--outline {
+  @extend %button--primary--outline;
+}
+
+.button--small {
+  font-size: rem(12px);
+  min-width: 100px;
+  padding: $gutter / 2 $gutter;
+}
+
+.button--large {
+  font-size: rem(20px);
+  min-width: 200px;
+  padding: $gutter-2x;
+}
+
+
+.button--block {
+  display: block;
+  text-align: center;
+  width: 100%;
+}

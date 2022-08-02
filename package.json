@@ -1,0 +1,23 @@
+{
+  "name": "design",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "UNLICENSED",
+  "author": "Ivan Montiel",
+  "private": true,
+  "scripts": {
+    "start": "if [ \"$WATCH\" = \"\" ]; then npm-run-all scss:no-watch server:no-watch; else npm-run-all --parallel server scss; fi",
+    "server": "yarn run build -- --server",
+    "server:no-watch": "yarn run build:once -- --server",
+    "scss": "nodemon -e scss --watch sass scss.js",
+    "scss:no-watch": "node scss.js",
+    "build": "yarn run build:once -- --watch",
+    "build:once": "./node_modules/.bin/styleguide --port 8100 --overviewPath \"sass/overview.md\" --kss-source \"sass/**/*.scss\" --style-source \"public/*.css\" --output styleguide"
+  },
+  "devDependencies": {
+    "node-sass": "^4.5.3",
+    "nodemon": "^1.11.0",
+    "npm-run-all": "^4.0.2",
+    "sc5-styleguide": "^1.9.0"
+  }
+}

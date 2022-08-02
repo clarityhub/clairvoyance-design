@@ -1,0 +1,48 @@
+/*
+Links
+
+.na - normal link
+:hover - Hover
+:active - Active
+:visited - Visited
+:visited:hover - Hover Visited
+
+markup:
+<p>
+  Lorem <a class="{$modifiers}" href="#">ipsum dolor</a> sit amet, consectetur adipiscing elit. Morbi commodo ornare eros,
+  quis dictum nulla convallis a. Proin non metus sagittis, mattis arcu ac, fermentum
+  urna.
+</p>
+
+Styleguide 2.4
+*/
+%a {
+  border-bottom: 1px solid $clair-primary;
+  color: $clair-primary;
+  display: inline-block;
+  text-decoration: none;
+
+  &:hover,
+  &:active {
+    $color: lighten($clair-primary, 10%);
+
+    border-bottom: 2px solid $color;
+    border-bottom-width: 2px;
+    color: $color;
+    margin-bottom: -1px;
+    text-decoration: none;
+  }
+
+  &:visited {
+    $color: darken($clair-primary, 30%);
+
+    border-bottom: 1px solid $color;
+    color: $color;
+    text-decoration: none;
+
+    &:hover,
+    &:active {
+      margin-bottom: 0;
+    }
+  }
+}

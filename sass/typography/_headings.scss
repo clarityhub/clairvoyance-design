@@ -1,0 +1,43 @@
+/*
+Headings
+
+Headings are available for HTML elements (h1, h2 … h5) or classes ().h1, .h2 … .h5)
+
+markup:
+<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+<h4>Heading 4</h4>
+<h5>Heading 5</h5>
+
+Styleguide 2.2
+*/
+%h1 {
+  @extend %clair-heading;
+
+  font-size: rem(32px);
+}
+
+%h2 {
+  @extend %clair-heading;
+
+  font-size: rem(26px);
+}
+
+%h3 {
+  @extend %clair-heading;
+
+  font-size: rem(21px);
+}
+
+%h4 {
+  @extend %clair-heading-secondary;
+
+  font-size: rem(19px);
+}
+
+%h5 {
+  @extend %clair-heading-secondary;
+
+  font-size: rem(16px);
+}

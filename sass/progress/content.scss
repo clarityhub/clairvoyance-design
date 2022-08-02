@@ -1,0 +1,30 @@
+@keyframes placeHolderShimmer {
+  0% {
+    background-position: -468px 0;
+  }
+
+  100% {
+    background-position: 468px 0;
+  }
+}
+
+%shimmer {
+  $light: transparentize($clair-wash, 0.6);
+  $dark: transparentize($clair-wash, 0.8);
+  // -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  // -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  // -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  // -webkit-animation-name: placeHolderShimmer;
+  animation-name: placeHolderShimmer;
+  // -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  background: $light;
+  background: -webkit-gradient(linear, left top, right top, color-stop(8%, $light), color-stop(18%, $dark), color-stop(33%, $light));
+  background: -webkit-linear-gradient(left, $light 8%, $dark 18%, $light 33%);
+  background: linear-gradient(to right, $light 8%, $dark 18%, $light 33%);
+  // -webkit-background-size: 800px 104px;
+  background-size: 800px 104px;
+}

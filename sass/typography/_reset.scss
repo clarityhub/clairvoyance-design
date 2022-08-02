@@ -1,0 +1,16 @@
+/*
+No Font Smoothing
+
+By default, all fonts use font smoothing.
+
+If you need to reset this for particilar sections
+of text (such as 14pt on clarityhub primary), feel
+free to use the `%no-font-smoothing` placeholder
+
+Styleguide 2.5
+*/
+
+%no-font-smoothing {
+  -moz-osx-font-smoothing: initial;
+  -webkit-font-smoothing: initial;
+}

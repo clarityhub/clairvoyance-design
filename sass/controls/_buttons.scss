@@ -1,0 +1,207 @@
+/*
+Buttons
+
+Styleguide 3
+*/
+
+/*
+Buttons
+
+markup:
+<button class="">Default</button>
+<button class="button--primary">Primary</button>
+<button class="button--success">Success</button>
+<button class="button--danger">Danger</button>
+<button class="button--outline">Outline</button>
+<button class="button--primary--outline">Outline</button>
+
+sg-wrapper:
+<div style="background-color: $clair-dark; padding: 16px; width: 100%">
+  <sg-wrapper-content/>
+</div>
+
+Styleguide 3.1
+*/
+%button {
+  @extend %clair-text;
+
+  background-color: $clair-light;
+  border: 1px solid $clair-light;
+  border-radius: 8px;
+  color: $clair-primary;
+  cursor: pointer;
+  display: inline-block;
+  font-size: rem(14px);
+  min-width: 150px;
+  padding: $gutter;
+  text-align: center;
+  text-decoration: none;
+  transition: opacity $fast ease-in;
+
+  &:visited {
+    border: 1px solid $clair-light;
+    color: $clair-primary;
+  }
+
+  &:hover,
+  &:active {
+    opacity: 0.8;
+  }
+
+  > {
+    vertical-align: middle;
+  }
+}
+
+%button--primary {
+  background-color: $clair-primary;
+  border: 1px solid $clair-primary;
+  color: $clair-light;
+
+  &:visited {
+    border: 1px solid $clair-primary;
+    color: $clair-light;
+  }
+
+  &:hover,
+  &:active {
+    opacity: 0.8;
+  }
+}
+
+%button--success {
+  background-color: $clair-success;
+  border: 1px solid $clair-success;
+  color: $clair-light;
+  transition: all $fast ease-in;
+  transition-property: background-color, border;
+
+  &:visited {
+    border: 1px solid $clair-success;
+    color: $clair-light !important;
+  }
+
+  &:hover,
+  &:active {
+    background-color: darken($clair-success, 10%);
+    border: 1px solid darken($clair-success, 10%);
+  }
+}
+
+%button--danger {
+  background-color: $clair-danger;
+  border: 1px solid $clair-danger;
+  color: $clair-light;
+  transition: all $fast ease-in;
+  transition-property: background-color, border;
+
+  &:visited {
+    border: 1px solid darken($clair-danger, 10%);
+    color: $clair-light !important;
+  }
+
+  &:hover,
+  &:active {
+    background-color: darken($clair-danger, 10%);
+    border: 1px solid darken($clair-danger, 10%);
+  }
+}
+
+%button--outline {
+  background-color: transparent;
+  border: 1px solid $clair-light;
+  color: $clair-light;
+
+  &:visited {
+    border: 1px solid $clair-light;
+    color: $clair-light !important;
+  }
+
+  &:hover,
+  &:active {
+    opacity: 0.8;
+  }
+}
+
+%button--primary--outline {
+  background-color: transparent;
+  border: 1px solid $clair-primary;
+  color: $clair-primary;
+
+  &:visited {
+    border: 1px solid $clair-primary;
+    color: $clair-primary !important;
+  }
+
+  &:hover,
+  &:active {
+    opacity: 0.8;
+  }
+}
+
+%button--link {
+  border-bottom-width: 1px !important;
+
+  &:hover,
+  &:active,
+  &:focus {
+    margin-bottom: 0 !important;
+  }
+}
+
+/*
+Button Sizes
+
+markup:
+<button class="button--small">Small</button>
+<button class="">Default</button>
+<button class="button--large">Large</button>
+
+sg-wrapper:
+<div style="background-color: $clair-dark; padding: 16px; width: 100%">
+  <sg-wrapper-content/>
+</div>
+
+Styleguide 3.2
+*/
+%button--small {
+  font-size: rem(12px);
+  min-width: 100px;
+  padding: $gutter / 2 $gutter;
+}
+
+@mixin buttonLarge() {
+  font-size: rem(20px);
+  min-width: 200px;
+  padding: $gutter-2x;
+}
+
+%button--large {
+  @include buttonLarge;
+}
+
+
+/*
+Block Buttons
+
+markup:
+<button class="button--block button--primary">Primary</button>
+<button class="button--block button--outline">Outline</button>
+<button class="button--block button--large">Large</button>
+
+sg-wrapper:
+<div style="background-color: $clair-dark; padding: 16px; width: 100%">
+  <sg-wrapper-content/>
+</div>
+
+Styleguide 3.3
+*/
+@mixin buttonBlock() {
+  display: block;
+  text-align: center;
+  width: 100%;
+}
+
+%button--block {
+  @include buttonBlock;
+}

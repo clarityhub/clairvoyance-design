@@ -1,0 +1,23 @@
+/*
+Paragraphs
+
+markup:
+<p>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi commodo ornare eros,
+  quis dictum nulla convallis a. Proin non metus sagittis, mattis arcu ac, fermentum
+  urna.
+</p>
+
+Styleguide 2.3
+*/
+%p {
+  @extend %clair-text;
+  letter-spacing: 0.4px;
+
+  @include retina() {
+    font-size: rem(17.6px); // 1.1rem
+    line-height: rem(25.6px); // 1.6rem
+  }
+  font-size: rem(16px);
+  line-height: rem(22.4px); // 1.4rem
+}

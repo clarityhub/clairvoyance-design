@@ -1,0 +1,30 @@
+a {
+  border-bottom: 1px solid $clair-primary;
+  color: $clair-primary;
+  display: inline-block;
+  text-decoration: none;
+
+  &:hover,
+  &:active {
+    $color: lighten($clair-primary, 10%);
+
+    border-bottom: 2px solid $color;
+    border-bottom-width: 2px;
+    color: $color;
+    margin-bottom: -1px;
+    text-decoration: none;
+  }
+
+  &:visited {
+    $color: darken($clair-primary, 30%);
+
+    border-bottom: 1px solid $color;
+    color: $color;
+    text-decoration: none;
+
+    &:hover,
+    &:active {
+      margin-bottom: 0;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+/*
+Grid
+
+Our grid is built using Bourbon's Neat grid framework. We use the default 12 column layout.
+
+Styleguide 5.1
+*/
+
+$neat-grid: (
+  columns: 12,
+  gutter: $gutter-2x,
+);
